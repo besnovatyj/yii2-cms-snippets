@@ -5,6 +5,18 @@
 превью). Отдельный модуль + движко-независимое npm-ядро + тонкая связка с движком —
 зеркалит уже отработанные в проекте паттерны файлового менеджера.
 
+## Статус
+
+- [x] Шаг 1 — контракт `SnippetProvider` + DTO (yii2-cms-contracts)
+- [x] Шаг 2 — модуль yii2-cms-snippets (домен, админка, API-tree)
+- [x] Шаг 3 — npm-ядро `@besnovatyj/snippets-core` (пикер)
+- [x] Шаг 4 — связка в yii2-cms-jodit (плагин + JoditWidget + esbuild-флаг); иконка кнопки — своя SVG (встроенное имя 'paste' не резолвилось → пустая некликабельная кнопка)
+- [x] Шаг 5 — опция `enableSnippets` в фасаде (EditorOptions + EditorWidget + JoditEditorAdapter)
+- [ ] Шаг 6 — прогон тела сниппета через `ShortcodeTextResolver` на рендере фронта
+
+Для рабочего пикера нужен установленный модуль (иначе API `/Snippets/backend/api/tree` → 404,
+пикер покажет ошибку): modman install Snippets + recompile + reload php-fpm.
+
 ## Решения (зафиксированы)
 
 - **Источник:** модуль + БД + контракт-провайдер. Сниппеты правит контент-менеджер в

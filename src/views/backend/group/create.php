@@ -11,7 +11,7 @@ use yii\web\View;
 /* @var $model GroupForm */
 
 $this->title = 'Новая категория';
-$this->params['breadcrumbs'][] = ['label' => 'Сниппеты', 'url' => ['default/index']];
+$this->params['breadcrumbs'][] = ['label' => 'Сниппеты', 'url' => ['backend/default/index']];
 $this->params['breadcrumbs'][] = ['label' => 'Категории', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

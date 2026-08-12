@@ -16,7 +16,7 @@ use yii\web\View;
 /* @var $dataProvider ActiveDataProvider */
 
 $this->title = 'Категории сниппетов';
-$this->params['breadcrumbs'][] = ['label' => 'Сниппеты', 'url' => ['default/index']];
+$this->params['breadcrumbs'][] = ['label' => 'Сниппеты', 'url' => ['backend/default/index']];
 $this->params['breadcrumbs'][] = 'Категории';
 ?>
 

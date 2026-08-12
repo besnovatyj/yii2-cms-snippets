@@ -13,7 +13,7 @@ use yii\web\View;
 /* @var $group SnippetGroup */
 
 $this->title = 'Категория: ' . $group->name;
-$this->params['breadcrumbs'][] = ['label' => 'Сниппеты', 'url' => ['default/index']];
+$this->params['breadcrumbs'][] = ['label' => 'Сниппеты', 'url' => ['backend/default/index']];
 $this->params['breadcrumbs'][] = ['label' => 'Категории', 'url' => ['index']];
 $this->params['breadcrumbs'][] = 'Редактирование';
 ?>

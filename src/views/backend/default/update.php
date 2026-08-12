@@ -14,7 +14,7 @@ use yii\web\View;
 /* @var $groups array<int,string> */
 
 $this->title = 'Сниппет: ' . $snippet->title;
-$this->params['breadcrumbs'][] = ['label' => 'Сниппеты', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Сниппеты', 'url' => ['backend/default/index']];
 $this->params['breadcrumbs'][] = 'Редактирование';
 ?>
 <div class="container-fluid">

@@ -25,7 +25,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <p>
     <?= Html::a('Создать сниппет', ['create'], ['class' => 'btn btn-success']) ?>
-    <?= Html::a('Категории', ['group/index'], ['class' => 'btn btn-outline-secondary']) ?>
+    <?= Html::a('Категории', ['backend/group/index'], ['class' => 'btn btn-outline-secondary']) ?>
 </p>
 
 <div class="container-fluid">

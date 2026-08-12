@@ -22,7 +22,7 @@ $this->params['breadcrumbs'][] = 'Категории';
 
 <p>
     <?= Html::a('Создать категорию', ['create'], ['class' => 'btn btn-success']) ?>
-    <?= Html::a('К сниппетам', ['default/index'], ['class' => 'btn btn-outline-secondary']) ?>
+    <?= Html::a('К сниппетам', ['backend/default/index'], ['class' => 'btn btn-outline-secondary']) ?>
 </p>
 
 <div class="container-fluid">

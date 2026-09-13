@@ -10,15 +10,15 @@ namespace Besnovatyj\Snippets\services;
 
 use Besnovatyj\Contracts\snippet\SnippetGroup;
 use Besnovatyj\Contracts\snippet\SnippetProvider;
-use Yii;
+use Besnovatyj\Kernel\module\ModuleFinder;
 use yii\base\Component;
 
 /**
  * Агрегатор сниппетов: собирает дерево из всех подключённых источников {@see SnippetProvider}.
  *
- * Находит провайдеров сканом подключённых Yii-модулей на `instanceof SnippetProvider` — ровно как
- * модуль меню находит {@see \Besnovatyj\Contracts\menu\MenuTargetProvider}. Группы с одинаковым `id`
- * от разных провайдеров сливаются (сниппеты складываются, sort берётся минимальный), поэтому модули
+ * Находит провайдеров сканом подключённых Yii-модулей по контракту `SnippetProvider` ({@see ModuleFinder},
+ * инстанцируются только провайдеры) — ровно как модуль меню находит
+ * {@see \Besnovatyj\Contracts\menu\MenuTargetProvider}. Группы с одинаковым `id` от разных провайдеров сливаются (сниппеты складываются, sort берётся минимальный), поэтому модули
  * могут дополнять общие категории, не зная друг о друге. Результат отдаётся фронту API-эндпоинтом.
  */
 class SnippetCatalog extends Component
@@ -63,13 +63,6 @@ class SnippetCatalog extends Component
      */
     private function providers(): array
     {
-        $providers = [];
-        foreach (Yii::$app->getModules() as $id => $definition) {
-            $module = Yii::$app->getModule($id);
-            if ($module instanceof SnippetProvider) {
-                $providers[] = $module;
-            }
-        }
-        return $providers;
+        return array_values(ModuleFinder::implementing(SnippetProvider::class));
     }
 }
